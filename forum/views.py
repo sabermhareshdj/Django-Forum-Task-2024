@@ -7,3 +7,11 @@ def question_list(request):
     return render(request, 'forum\list.html', {'data':data})
 
 
+def question_detail(request, id):
+    question = Question.objects.get(id=id)
+    answers =Answer.objects.filter(question=question)
+
+    return render(request, 'forum\detail.html', {'question':question, 'answers':answers})
+
+
+
