@@ -5,9 +5,9 @@
 
 <hr>
 
-<h4>Answers</h4>
+<h4>({{ question.answer_question.all|length }})Answers</h4>
 <ul>
-    {% for object in answers %}
+    {% for object in question.answer_question.all %}
         <li> {{ object.author}} - {{object.answer}} - {{object.created_at}}</li>
     {% endfor %}
 </ul>
